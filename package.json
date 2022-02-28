@@ -28,9 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "json-server": "json-server --watch db.json --port 3001",
-    "dev": "concurrently \"npm start\" \"npm run json-server\"",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "concurrently \"npm start\" \"npm run json-server\""
   },
   "eslintConfig": {
     "extends": [
