@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
 
-  baseURL: "http://localhost:3001",
+  baseURL: "https://goofy-euclid-b2bf86.netlify.app",
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
   },
