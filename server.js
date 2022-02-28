@@ -1,15 +1,24 @@
-const express = require('express');
-const bodyParser = require('body-parser')
-const path = require('path');
-const app = express();
-app.use(express.static(path.join(__dirname, 'build')));
-
-app.get('/ping', function (req, res) {
- return res.send('pong');
+const jsonServer = require("json-server");
+const server  = jsonServer.create();
+const router  = jsonServer.router("./db.json");
+const middlewares = jsonServer.defaults({
+  static:"./build"
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
-app.listen(process.env.PORT || 8080);
+const port = process.env.PORT || 5000;
+
+server.use(middlewares);
+
+server.use(
+  jsonServer.rewriter({
+    "/api/*": "/$1",
+  })
+)
+
+
+server.use(router);
+
+server.listen(port,( )=>{
+ console.log(`Server is runing on ${port}`);
+});
