@@ -1,7 +1,7 @@
 {
   "name": "admin-panel",
   "version": "0.1.0",
-  "homepage":"https://my-json-server.typicode.com/houssainBouhani/api",
+  "homepage":"https://github.com/houssainBouhani/testCRUD",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
